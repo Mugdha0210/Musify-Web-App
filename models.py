@@ -11,9 +11,9 @@ import base64
 from urllib.parse import urlencode
 
 import requests
+import json
 
-
-class SpotifyAPI(models.Model):
+class SpotifyAPI(object):
     access_token = None
     access_token_expires = datetime.datetime.now()
     client_id = None
@@ -116,7 +116,7 @@ class SpotifyAPI(models.Model):
     def get_id(self, name, search_type = 'artist') :
         response = self.search(query = name, search_type = search_type)
         json_data = json.loads(response.text)
-        #print(json_data)
+        print(json_data)
         return json_data['artists']['items'][0]['id']
         
     def get_album(self, _id):
@@ -125,3 +125,16 @@ class SpotifyAPI(models.Model):
     def get_artist(self, artist_name):
         _id = self.get_id(name = artist_name)
         return self.get_resource(_id, resource_type = 'artists')
+    
+    def get_artist_albums(self, artist_name):
+        _id = self.get_id(name = artist_name)
+        headers = self.get_resource_header()
+        endpoint = "https://api.spotify.com/v1/artists"
+        query_params = urlencode({"include_groups" : "single", "offset" : 0, "limit" : 5})
+        lookup_url = f"{endpoint}/{_id}/albums?{query_params}"
+        r = requests.get(lookup_url, headers = headers)
+        print(lookup_url)
+        print(r.status_code)
+        if r.status_code not in range(200, 299):
+            return {}
+        return r.json()

@@ -18,41 +18,77 @@
 </head>
 
 <body>
-	<nav class = "navbar navbar-dark navbar-expand-sm fixed-top">
-		<div class = "container">
-			<button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#Navbar">
-				<span class = "navbar-toggler-icon"></span>
-			</button>
-			<a class = "navbar-brand mr-auto" href = "#">
-				<img src = "{%static "Musify/logo.png" %}" height = "35" , width = "35">
-			</a>
-			<div class = "collapse navbar-collapse" id = "Navbar">
-			<ul class = "navbar-nav mr-auto">
-				<li class = "nav-item active"> <a class = "nav-link" href = "#"> <span class = "fa fa-home fa-lg"></span> Home </a> </li>
-				<li class = "nav-item"> <a class = "nav-link" href = "#"><span class = "fa fa-sign-in fa-lg"></span> Login</a> </li>
 
-			</ul>
-			</div>
-		</div>
-	</nav>
     <header class = "jumbotron">
         <div class = container>
             <div class = "row row-header">
-                <div class = "col-12 col-sm-6">
+            	<div class = "col-sm-2">
+            	<img src = "{%static "Musify/logo.png" %}" height = "100" , width = "100" class = "img-fluid">
+            	</div>
+                <div class = "col-sm-6">
                     <h1>Musify</h1>
                     <p>Insert some exciting intro</p>
                 </div>
-                <div class="col-12 col-sm align-self-center">
-                	<!--img src = "{%static "Musify/logo.png" %}" height = "60" , width = "82" class = "img-fluid"-->
-                </div>
+
             </div>
         </div>
     </header>
+ 
+	<div style = "background-color : black" >   
+    <!--div class = container-->
+        <div class = "row row-content align-self-center" >
     
-    <div class = container>
-        <div class = "row row-content" >
-        	<div class="col-12">
-              		<img src = {{image_url}} height = "500" , width = "800" class = "img-fluid">
+                <div class = "col-12">
+            	<div class = "media">
+            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = {{artist_image_url}} alt = "artist image">
+            		<div class = "media-body">
+            			<h2 class = "mt-0" style = "color : floralwhite"><i>{{artist}}</i></h2>
+    				</div>
+    			</div>
+    			</div>
+    
+    
+    <div class = "col-12 offset-0.5">
+    <div class="card-deck">
+    <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{album1_image_url}} alt="Card image" style="width:100%">
+	<div class="card-body">
+      <a href="#" class="btn btn-primary">Play Song</a>
+    </div>
+    </div>
+    
+    <div class="card offset" style="width:300px">
+    <img class="card-img-top" src = {{album2_image_url}} alt="Card image" style="width:100%">
+	<div class="card-body">
+      <a href="#" class="btn btn-primary">Play Song</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{album3_image_url}} alt="Card image" style="width:100%">
+	<div class="card-body">
+      <a href="#" class="btn btn-primary">Play Song</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{album4_image_url}} alt="Card image" style="width:100%">
+	<div class="card-body">
+      <a href="#" class="btn btn-primary">Play Song</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{album5_image_url}} alt="Card image" style="width:100%">
+	<div class="card-body">
+      <a href="#" class="btn btn-primary">Play Song</a>
+    </div>
+    </div>
+
+  </div>
+  </div>
+   
+
         	</div>
         </div>
     </div>

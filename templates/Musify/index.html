@@ -18,47 +18,34 @@
 </head>
 
 <body>
-	<nav class = "navbar navbar-dark navbar-expand-sm fixed-top">
-		<div class = "container">
-			<button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#Navbar">
-				<span class = "navbar-toggler-icon"></span>
-			</button>
-			<a class = "navbar-brand mr-auto" href = "#">
-				<img src = "{%static "Musify/logo.png" %}" height = "35" , width = "35">
-			</a>
-			<div class = "collapse navbar-collapse" id = "Navbar">
-			<ul class = "navbar-nav mr-auto">
-				<li class = "nav-item active"> <a class = "nav-link" href = "#"> <span class = "fa fa-home fa-lg"></span> Home </a> </li>
-				<li class = "nav-item"> <a class = "nav-link" href = "#"><span class = "fa fa-sign-in fa-lg"></span> Login</a> </li>
 
-			</ul>
-			</div>
-		</div>
-	</nav>
     <header class = "jumbotron">
         <div class = container>
             <div class = "row row-header">
-                <div class = "col-12 col-sm-6">
+            	<div class = "col-sm-2">
+            	<img src = "{%static "Musify/logo.png" %}" height = "100" , width = "100" class = "img-fluid">
+            	</div>
+                <div class = "col-sm-6">
                     <h1>Musify</h1>
                     <p>Insert some exciting intro</p>
                 </div>
-                <div class="col-12 col-sm align-self-center">
-                	<!--img src = "{%static "Musify/logo.png" %}" height = "60" , width = "82" class = "img-fluid"-->
-                </div>
+
             </div>
         </div>
     </header>
     
-    <div class = container>
-        <div class = "row row-content" >
+    <div style = "background-color : black" >
+    	<div class = container>
+        <div class = "row row-content align-items-center" >
         	<div class="col-12">
-              		<h3>Your favourite songs are a click away!</h3>
-              		<button type = "submit" class = "btn btn-primary"><a href = "./searchpage.html">-----Next----</a></button>
+              		<h1 style = "color :floralwhite">Your favourite songs are a click away!</h1>
+              	</div>
+        	<div class="col-12">
+              		<button type = "submit" class = "button-index btn btn-round-lg btn-block"><a href = "./searchpage.html"><i style="font-size : 50px"> Browse! </i></a></button>
         	</div>
         </div>
+        </div>
     </div>
-
-
 
 </body>
 </html>
