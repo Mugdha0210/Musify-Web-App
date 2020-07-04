@@ -5,8 +5,11 @@ from django.template import loader
 from .models import SpotifyAPI
 from django.shortcuts import get_object_or_404
 from .forms import ArtistForm
-
+import requests
 # Create your views here.
+playlist = []
+recom = []
+
 def index(request):
 	#template = loader.get_template('Musify/index.html')
 	#context = { 'latest_question_list' : "Hello World", }
@@ -59,8 +62,43 @@ def search_page(request):
 	
 def redirect_page(request):
 	#template = loader.get_template('Musify/callback.html')
-	return render(request, 'Musify/callback.html')
+	client_id = 'e1026387021c413786266d809e931ca1'
+	client_secret = '6a3eb258f5b54b358860a5de726d0063'
+	if request.method == 'GET' :
+		spotify = SpotifyAPI(client_id, client_secret)
+		s = spotify.perform_auth()
+		code = request.GET.urlencode()
+		code1 = str(code)
+		cleaned_code = code1.split('&')[0]
+		cleaned_code1 = cleaned_code[5:]
+		print("code is", cleaned_code1)
+		s = spotify.give_code_get_token(code = cleaned_code1)
+		s = spotify.base_search()
+		p = spotify.get_user_playlist()
+		playlist_id  = p.json()["items"][0]["id"]
+		p = spotify.get_playlist_items(playlist_id)
+		items = p.json()["items"]
+		global playlist
+		playlist = items
+		
+		x = spotify.get_recommend_seeds()
+		y = spotify.get_recommendns()
+		global recom
+		recom = y["tracks"][:5]
+	#else :
+		#print(s)
+		context = s.json()
+	print(s)
+	
+	return render(request, 'Musify/index.html', context)
 	
 	
+def display_page(request):
+	context = {}
+	for i in range(0, 5):
+		context[f"url{i}"] = playlist[i]["track"]["album"]["images"][0]["url"]
+		context[f"al_name{i}"] = recom[i]["album"]["name"]
+		context[f"al_img{i}"] = recom[i]["album"]["images"][0]["url"]
+	return render(request, 'Musify/displaypage.html', context)
 	
 

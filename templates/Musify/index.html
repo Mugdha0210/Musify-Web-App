@@ -33,18 +33,32 @@
             </div>
         </div>
     </header>
-    
+ 
+
     <div style = "background-color : black" >
-    	<div class = container>
-        <div class = "row row-content align-items-center" >
-        	<div class="col-12">
-              		<h1 style = "color :floralwhite">Your favourite songs are a click away!</h1>
-              	</div>
-        	<div class="col-12">
-              		<button type = "submit" class = "button-index btn btn-round-lg btn-block"><a href = "./searchpage.html"><i style="font-size : 50px"> Browse! </i></a></button>
+            <div class = container>
+    <div class = "row row-content" >
+    <div class = "col-12">
+      <h1 style = "color : floralwhite"> Logged in as {{display_name}}</h1>
+     </div>
+      <div class = "col-12">
+      <div class="media">
+        <div class="pull-left">
+          <img class="d-flex mr-3 img-thumbnail align-self-center" width="150" src="{%static "Musify/photo.png" %}" />
+        </div>
+        <div class="media-body">
+            <h3 class = "mt-0" style = "color : floralwhite">Display name  :  {{display_name}}</h3>
+            <p>Id  :  {{id}}</p>
+            <p>Email  :  {{email}}</p>
+            <p>Spotify URI  :  <a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></p>
+            <p>Link  :  <a href="{{href}}">{{href}}</a></p>
+            <p>Country  :  {{country}}</p>
+        </div>
+      </div>  
+      </div>
+      <div class="col-12">
+              		<button type = "submit" class = "button-index btn btn-round-lg btn-block"><a href = "./displaypage.html"><i style="font-size : 50px; color:black;"> Check your playlist! </i></a></button>
         	</div>
-        </div>
-        </div>
     </div>
 
 </body>

@@ -40,9 +40,9 @@
     
                 <div class = "col-12">
             	<div class = "media">
-            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = {{artist_image_url}} alt = "artist image">
+            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = "{%static "Musify/playlist_image.png" %}" alt = "playlist image" width = "100" height = "100">
             		<div class = "media-body">
-            			<h2 class = "mt-0" style = "color : floralwhite"><i>{{artist}}</i></h2>
+            			<h2 class = "mt-0" style = "color : floralwhite"><i>Enjoy your playlist!</i></h2>
     				</div>
     			</div>
     			</div>
@@ -51,35 +51,35 @@
     <div class = "col-12 offset-0.5">
     <div class="card-deck">
     <div class="card" style="width:300px">
-    <img class="card-img-top" src = {{album1_image_url}} alt="Card image" style="width:100%">
+    <img class="card-img-top" src = {{url0}} alt="Card image" style="width:100%">
 	<div class="card-body">
       <a href="#" class="btn btn-primary">Play Song</a>
     </div>
     </div>
     
     <div class="card offset" style="width:300px">
-    <img class="card-img-top" src = {{album2_image_url}} alt="Card image" style="width:100%">
+    <img class="card-img-top" src = {{url1}} alt="Card image" style="width:100%">
 	<div class="card-body">
       <a href="#" class="btn btn-primary">Play Song</a>
     </div>
     </div>
     
         <div class="card" style="width:300px">
-    <img class="card-img-top" src = {{album3_image_url}} alt="Card image" style="width:100%">
+    <img class="card-img-top" src = {{url2}} alt="Card image" style="width:100%">
 	<div class="card-body">
       <a href="#" class="btn btn-primary">Play Song</a>
     </div>
     </div>
     
         <div class="card" style="width:300px">
-    <img class="card-img-top" src = {{album4_image_url}} alt="Card image" style="width:100%">
+    <img class="card-img-top" src = {{url3}} alt="Card image" style="width:100%">
 	<div class="card-body">
       <a href="#" class="btn btn-primary">Play Song</a>
     </div>
     </div>
     
         <div class="card" style="width:300px">
-    <img class="card-img-top" src = {{album5_image_url}} alt="Card image" style="width:100%">
+    <img class="card-img-top" src = {{url4}} alt="Card image" style="width:100%">
 	<div class="card-body">
       <a href="#" class="btn btn-primary">Play Song</a>
     </div>
@@ -94,6 +94,78 @@
     </div>
 
 
+<div style = "background-color : black" >   
+	<div class = "row row-content align-self-center" >
+    
+                <div class = "col-12">
+            	<div class = "media">
+            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = "{%static "Musify/playlist_image.png" %}" alt = "playlist image" width = "100" height = "100">
+            		<div class = "media-body">
+            			<h2 class = "mt-0" style = "color : floralwhite"><i>Recommended for you!</i></h2>
+    				</div>
+    			</div>
+    			</div>
+    
+    
+    <div class = "col-12 offset-0.5">
+    <div class="card-deck">
+    <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img0}} alt="Card image" style="width:100%">
+	<div class="card-body">
+	<h4><i>{{al_name0}}</i></h4>
+      <a href="#" class="btn btn-primary">Go to album</a>
+    </div>
+    </div>
+    
+    <div class="card offset" style="width:300px">
+    <img class="card-img-top" src = {{al_img1}} alt="Card image" style="width:100%">
+	<div class="card-body">
+	<h4><i>{{al_name1}}</i></h4>
+      <a href="#" class="btn btn-primary">Go to album</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img2}} alt="Card image" style="width:100%">
+	<div class="card-body">
+	<h4><i>{{al_name2}}</i></h4>
+      <a href="#" class="btn btn-primary">Go to album</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img3}} alt="Card image" style="width:100%">
+	<div class="card-body">
+	<h4><i>{{al_name3}}</i></h4>
+      <a href="#" class="btn btn-primary">Go to album</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img4}} alt="Card image" style="width:100%">
+	<div class="card-body">
+	<h4><i>{{al_name4}}</i></h4>
+      <a href="#" class="btn btn-primary">Go to album</a>
+    </div>
+    </div>
 
+  </div>
+  </div>
+   </div>
+
+        	</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
 </body>
 </html>
