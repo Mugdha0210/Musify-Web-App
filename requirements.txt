@@ -52,7 +52,6 @@ python-jsonrpc-server==0.3.4
 python-language-server==0.31.7
 requests==2.22.0
 rope==0.16.0
-Rtree==0.9.3
 ruamel-yaml==0.15.87
 SecretStorage==3.1.2
 Send2Trash==1.5.0
