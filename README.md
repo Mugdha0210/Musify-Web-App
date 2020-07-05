@@ -1,6 +1,6 @@
 # Musify-Web-App
 A web app using Spotify Music API to suggest music based on artist or genre.\
-Steps to install and run :\ 
+Steps to download and run : \
 1.Clone the repository. \
 2.In the same directory, use $ python3 Musify.py to run the file.\
 3.Start the development server at http://127.0.0.1:8000/ .\
