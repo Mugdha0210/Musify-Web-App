@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    {% load static %}
+     <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{%static "Musify/styles.css" %}">
+    <title>Musify Trial</title>
+</head>
+
+<body>
+
+    <header class = "jumbotron">
+        <div class = container>
+            <div class = "row row-header">
+            	<div class = "col-sm-2">
+            	<img src = "{%static "Musify/logo.png" %}" height = "100" , width = "100" class = "img-fluid">
+            	</div>
+                <div class = "col-sm-6">
+                    <h1>Musify</h1>
+                    <p>Bring music to life!</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+ 
+	<div style = "background-color : black" >   
+    <!--div class = container-->
+        <div class = "row row-content align-self-center" >
+    
+                <div class = "col-12">
+            	<div class = "media">
+            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = "{%static "Musify/playlist_image.png" %}" alt = "playlist image" width = "100" height = "100">
+            		<div class = "media-body">
+            			<h2 class = "mt-0" style = "color : floralwhite"><i>Enjoy your playlist!</i></h2>
+    				</div>
+    			</div>
+    			</div>
+    
+    
+    <div class = "col-12 offset-0.5">
+    <div class="card-deck">
+    <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{url0}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+      <a href="#" class="btn btn-primary mt-auto">Play Song</a>
+    </div>
+    </div>
+    
+    <div class="card offset" style="width:300px">
+    <img class="card-img-top" src = {{url1}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+      <a href="#" class="btn btn-primary mt-auto">Play Song</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{url2}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+      <a href="#" class="btn btn-primary mt-auto">Play Song</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{url3}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+      <a href="#" class="btn btn-primary mt-auto">Play Song</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{url4}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+      <a href="#" class="btn btn-primary mt-auto">Play Song</a>
+    </div>
+    </div>
+
+  </div>
+  </div>
+   
+
+        	</div>
+        </div>
+    </div>
+
+
+<div style = "background-color : black" >   
+	<div class = "row row-content align-self-center" >
+    
+                <div class = "col-12">
+            	<div class = "media">
+            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = "{%static "Musify/playlist_image.png" %}" alt = "playlist image" width = "100" height = "100">
+            		<div class = "media-body">
+            			<h2 class = "mt-0" style = "color : floralwhite"><i>Recommended for you!</i></h2>
+    				</div>
+    			</div>
+    			</div>
+    
+    
+    <div class = "col-12 offset-0.5">
+    <div class="card-deck">
+    <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img0}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+	<h4><i>{{al_name0}}</i></h4>
+      <a href="#" class="btn btn-primary mt-auto">Go to album</a>
+    </div>
+    </div>
+    
+    <div class="card offset" style="width:300px">
+    <img class="card-img-top" src = {{al_img1}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+	<h4><i>{{al_name1}}</i></h4>
+      <a href="#" class="btn btn-primary mt-auto">Go to album</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img2}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+	<h4><i>{{al_name2}}</i></h4>
+      <a href="#" class="btn btn-primary mt-auto">Go to album</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img3}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+	<h4><i>{{al_name3}}</i></h4>
+      <a href="#" class="btn btn-primary mt-auto">Go to album</a>
+    </div>
+    </div>
+    
+        <div class="card" style="width:300px">
+    <img class="card-img-top" src = {{al_img4}} alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+	<h4><i>{{al_name4}}</i></h4>
+      <a href="#" class="btn btn-primary mt-auto">Go to album</a>
+    </div>
+    </div>
+
+  </div>
+  </div>
+   </div>
+
+        	</div>
+        </div>
+    </div>
+
+
+<div style = "background-color : black" >   
+	<div class = "row row-content align-self-center" >
+    
+                <div class = "col-12">
+            	<div class = "media">
+            		<img class = "d-flex mr-3 img-thumbnail align-self-center" src = "{%static "Musify/playlist_image.png" %}" alt = "playlist image" width = "100" height = "100">
+            		<div class = "media-body">
+            			<h2 class = "mt-0" style = "color : floralwhite"><i>Recently played!</i></h2>
+    				</div>
+    			</div>
+    			</div>
+    
+    
+    <div class = "col-3 offset-0.5">
+    <div class="card-deck">
+    <div class="card" style="width:250px">
+    <img class="card-img-top" src = "{%static "Musify/music.png" %}" alt="Card image" style="width:100%">
+	<div class="card-body d-flex flex-column">
+	<h4><i>{{rec_name0}}</i></h4>
+      <a href={{rec_pre0}} class="btn btn-primary mt-auto">Play song</a>
+    </div>
+    </div>
+
+
+
+        	</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
