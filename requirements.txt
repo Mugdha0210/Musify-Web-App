@@ -12,6 +12,7 @@ Flask==1.1.1
 fsspec==0.6.2
 future==0.18.2
 gevent==1.4.0
+gunicorn==19.9.0
 HeapDict==1.0.1
 html5lib==1.0.1
 hypothesis==5.5.4
@@ -88,6 +89,7 @@ watchdog==0.10.2
 wcwidth==0.1.8
 webencodings==0.5.1
 Werkzeug==1.0.0
+whitenoise==4.1.2
 widgetsnbextension==3.5.1
 wrapt==1.11.2
 wurlitzer==2.0.0
