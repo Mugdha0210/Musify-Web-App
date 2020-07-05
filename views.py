@@ -3,12 +3,14 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import SpotifyAPI
+from .models import SpotifyAPI1
 from django.shortcuts import get_object_or_404
 from .forms import ArtistForm
 import requests
 # Create your views here.
 playlist = []
 recom = []
+rec_pl = []
 
 def index(request):
 	#template = loader.get_template('Musify/index.html')
@@ -23,35 +25,24 @@ def search_page(request):
     #artist = request.POST['artist_name']
     #genre = request.POST['genre_name']
     #print(artist, genre)
+    a = {}
     if request.method == 'POST':
         a_form = ArtistForm(request.POST)
         if a_form.is_valid():
             artist = a_form.cleaned_data.get("artist")
             client_id = 'e1026387021c413786266d809e931ca1'
             client_secret = '6a3eb258f5b54b358860a5de726d0063'
-            spotify = SpotifyAPI(client_id, client_secret)
+            spotify = SpotifyAPI1(client_id, client_secret)
             r = spotify.get_artist(artist)
             artist_image_url = r['images'][2]['url']
             r = spotify.get_artist_albums(artist)
-            album_id1 = r['items'][0]['id']
-            r1 = spotify.get_album(album_id1)
-            album1_image_url = r1['images'][0]['url']
-            album_id2 = r['items'][1]['id']
-            r2 = spotify.get_album(album_id2)
-            album2_image_url = r2['images'][0]['url']
-            album_id3 = r['items'][2]['id']
-            r3 = spotify.get_album(album_id3)
-            album3_image_url = r3['images'][0]['url']
-            album_id4 = r['items'][3]['id']
-            r4 = spotify.get_album(album_id4)
-            album4_image_url = r4['images'][0]['url']
-            album_id5 = r['items'][4]['id']
-            r5 = spotify.get_album(album_id5)
-            album5_image_url = r5['images'][0]['url']
-            a = {"artist" : artist, "artist_image_url" : artist_image_url, "album1_image_url" : album1_image_url, "album2_image_url" : album2_image_url, "album3_image_url" : album3_image_url, "album4_image_url" : album4_image_url, "album5_image_url" : album5_image_url}
+            a["artist"] = artist
+            a["artist_image_url"] = artist_image_url
+            for i in range(0, 5):
+            	a[f"album{i}_image_url"] = spotify.get_album(r['items'][i]['id'])['images'][0]['url']
 
             #This image url should be used to display image on webpage
-            return render(request, 'Musify/displaypage.html', a)
+            return render(request, 'Musify/artistpage.html', a)
 
 
     else :
@@ -85,6 +76,13 @@ def redirect_page(request):
 		y = spotify.get_recommendns()
 		global recom
 		recom = y["tracks"][:5]
+		
+		z = spotify.get_rec_played()
+		items1 = z["items"]
+		global rec_pl
+
+		rec_pl = items1
+		print(rec_pl)		
 	#else :
 		#print(s)
 		context = s.json()
@@ -99,6 +97,9 @@ def display_page(request):
 		context[f"url{i}"] = playlist[i]["track"]["album"]["images"][0]["url"]
 		context[f"al_name{i}"] = recom[i]["album"]["name"]
 		context[f"al_img{i}"] = recom[i]["album"]["images"][0]["url"]
+
+	context["rec_name0"] = rec_pl[0]["track"]["name"]
+	context["rec_pre0"] = rec_pl[0]["track"]["preview_url"]
 	return render(request, 'Musify/displaypage.html', context)
 	
 

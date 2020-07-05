@@ -7,9 +7,6 @@ p {
 	color : floralwhite;
 }
 
-button {
-  background-color: #FF8C00;
-}
   
 .row-header{
 	margin :0px auto;
@@ -44,11 +41,22 @@ button {
 }
 
 
+.button-search{
+	height : 3vh;
+	border-radius : 50px; 
+	background-color: white;
+	
+	
+	text-align:left; 
+}
 
+.format{color:#A9A9A9; font-family:sans-serif; }
 
 .button-index{
-	height : 7vh;
+	height : 5vh;
 	border-radius : 50px; 
+	background-color: #FF8C00;
+	text-align:center; 
 }
 
 .input {
